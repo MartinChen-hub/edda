@@ -49,8 +49,7 @@ podTemplate(label: label,serviceAccount:'jenkins-k8s-sa',containers: [
     }
     stage('运行 Kubectl') {
       container('kubectl') {
-        sh './jenkins/scripts/k8s-deploy-admin-api.sh'
-        sh './jenkins/scripts/k8s-deploy-wx-api.sh'
+        sh './jenkins/scripts/k8s-deploy.sh'
       }
     }
   }
