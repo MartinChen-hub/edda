@@ -40,8 +40,4 @@ public class EddaUtils {
         System.out.println(serializationDto.hashCode()+" -> "+serializationDto.toString());
     }
 
-    public static void main(String[] args) throws CloneNotSupportedException {
-        cloneTest();
-    }
-
 }
