@@ -17,7 +17,7 @@ spec:
           image: markchen20190628/edda:v2.0
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8082
+            - containerPort: 8080
               name: web
               protocol: TCP
             - containerPort: 50001
