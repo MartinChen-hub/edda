@@ -15,8 +15,8 @@ podTemplate(label: label,serviceAccount:'jenkins-k8s-sa',containers: [
     def gitBranch = myRepo.GIT_BRANCH
 
 
-    def imageTag = "v1.0"
-    def dockerRegistryUrl = "index.docker.io"
+    def imageTag = "v2.0"
+    def dockerRegistryUrl = "docker.io"
     def imageEndpoint1 = "markchen20190628/edda"
     def image1 = "${imageEndpoint1}"
 
