@@ -38,6 +38,8 @@ podTemplate(label: label,serviceAccount:'jenkins-k8s-sa',containers: [
           passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
             container('docker') {
               echo "3. 构建 Docker 镜像阶段"
+              echo  ${DOCKER_HUB_USER}
+              echo  ${DOCKER_HUB_PASSWORD}
               sh """
                 docker login ${dockerRegistryUrl} -u ${DOCKER_HUB_USER} -p ${DOCKER_HUB_PASSWORD}
                 docker build -t ${image1}:${imageTag} .
