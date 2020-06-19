@@ -14,7 +14,7 @@ spec:
       serviceAccountName: edda-k8s-sa
       containers:
         - name: edda
-          image: docker.io/markchen20190628/edda:v2.0
+          image: markchen20190628/edda:v2.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8082
