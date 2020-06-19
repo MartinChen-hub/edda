@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-slim
+FROM openjdk:8-jre-alpine
 # 作者
 MAINTAINER MartinChen <1004185602@qq.com>
 # VOLUME 指定了临时文件目录为/tmp。
