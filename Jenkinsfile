@@ -16,7 +16,7 @@ podTemplate(label: label,serviceAccount:'jenkins-k8s-sa',containers: [
 
 
     def imageTag = "v1.0"
-    def dockerRegistryUrl = "https://hub.docker.com/"
+    def dockerRegistryUrl = "index.docker.io"
     def imageEndpoint1 = "markchen20190628/edda"
     def image1 = "${dockerRegistryUrl}/${imageEndpoint1}"
 
