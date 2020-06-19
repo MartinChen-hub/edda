@@ -23,16 +23,6 @@ spec:
             - containerPort: 50001
               name: agent
               protocol: TCP
-          volumeMounts:
-            - name: storehome
-              subPath: data
-              mountPath: /var/data
-      securityContext:
-        fsGroup: 1000
-      volumes:
-        - name: storehome
-          persistentVolumeClaim:
-            claimName: storepvc
 
 ---
 apiVersion: v1
