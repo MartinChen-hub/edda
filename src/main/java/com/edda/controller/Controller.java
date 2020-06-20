@@ -18,9 +18,9 @@ public class Controller {
 
     @GetMapping(path="/test/customers/{customerId}")
     public String getCustomer(@PathVariable String customerId){
-        log.info("webhook test 4: get a controller request:{}", customerId);
+        log.info("webhook test 5: get a controller request:{}", customerId);
         String t24CustomerId = testService.getCustomer(customerId);
-        return t24CustomerId;
+        return "webhook test 5 "+t24CustomerId;
     }
 
     @PostMapping(path="/test/customers/{customerId}")
