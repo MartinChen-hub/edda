@@ -38,6 +38,7 @@ public class Controller {
 
     @GetMapping(path = "/test/bank/{bankCode}")
     public String getBankName(@PathVariable String bankCode){
+        log.info("Receive a request to get bank name from bank code({})", bankCode);
         String bankName = "We cannot find bank "+bankCode;
         Map<String, String> banks = bankProxy.getBank();
         if(banks!=null){
