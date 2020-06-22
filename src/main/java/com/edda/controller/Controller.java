@@ -1,9 +1,12 @@
 package com.edda.controller;
 
+import com.edda.proxy.BankProxy;
 import com.edda.service.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @Slf4j
@@ -11,9 +14,12 @@ public class Controller {
 
     private TestService testService;
 
+    private BankProxy bankProxy;
+
     @Autowired
-    public Controller(TestService testService){
+    public Controller(TestService testService, BankProxy bankProxy){
         this.testService = testService;
+        this.bankProxy = bankProxy;
     }
 
     @GetMapping(path="/test/customers/{customerId}")
@@ -28,5 +34,15 @@ public class Controller {
         log.info("create a controller request:{}", customerId);
         String t24CustomerId = testService.getCustomer(customerId);
         return t24CustomerId;
+    }
+
+    @GetMapping(path = "/test/bank/{bankCode}")
+    public String getBankName(@PathVariable String bankCode){
+        String bankName = "We cannot find bank "+bankCode;
+        Map<String, String> banks = bankProxy.getBank();
+        if(banks!=null){
+            bankName = banks.get(bankCode);
+        }
+        return bankName;
     }
 }
