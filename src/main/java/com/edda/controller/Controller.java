@@ -3,6 +3,7 @@ package com.edda.controller;
 import com.edda.proxy.BankProxy;
 import com.edda.service.TestService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,7 +43,10 @@ public class Controller {
         String bankName = "We cannot find bank "+bankCode;
         Map<String, String> banks = bankProxy.getBank();
         if(banks!=null){
-            bankName = banks.get(bankCode);
+            String bankNameTemp = banks.get(bankCode);
+            if(StringUtils.isNotBlank(bankNameTemp)){
+                bankName = bankNameTemp;
+            }
         }
         return bankName;
     }
