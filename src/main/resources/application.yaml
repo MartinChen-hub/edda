@@ -4,7 +4,6 @@ server:
 spring:
   application:
     name: edda
-
   rabbitmq:
     host: rabbit-server-service.mq.svc.cluster.local
     port: 5672
