@@ -6,8 +6,8 @@ spring:
     name: edda
 
   rabbitmq:
-    host: http://rabbit-server-service.mq.svc.cluster.local:8080
-    port: 5672
+    host: http://rabbit-server-service.mq.svc.cluster.local
+    port: 8080
     username: guest
     password: guest
     #确认消息已发送到队列(Queue)
