@@ -4,19 +4,18 @@ server:
 spring:
   application:
     name: edda
-#  redis:
-#    host: localhost
-#    port: 6379
-#  rabbitmq:
-#    host: Myrabbitmq
-#    port: 5672
-#    username: admin
-#    password: admin
-#    #确认消息已发送到交换机(Exchange)
-#    publisher-confirms: true
-#    #确认消息已发送到队列(Queue)
-#    publisher-returns: true
 
+  rabbitmq:
+    host: http://rabbit-server-service.mq.svc.cluster.local:8080
+    port: 5672
+    username: guest
+    password: guest
+    #确认消息已发送到队列(Queue)
+    publisher-returns: true
+
+  #  redis:
+  #    host: localhost
+  #    port: 6379
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} %5p [${spring.application.name:-},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-}] ${PID:- } --- [%15.15t] %-40.40logger{39} [%20.20M]: %m%n"
