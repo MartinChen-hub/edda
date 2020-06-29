@@ -24,3 +24,6 @@ logging:
 bank:
   name: bank
   url: http://bank.ostone-platform.svc.cluster.local:8080
+customer:
+  name: customer
+  url: http://customer.dev-customer.svc.cluster.local:8080
