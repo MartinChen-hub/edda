@@ -42,7 +42,7 @@ public class Controller {
         return t24CustomerId;
     }
 
-    @GetMapping(path = "/test/bank/{bankCode}")
+    @GetMapping(path = "/test/banks/{bankCode}")
     public String getBankName(@PathVariable String bankCode){
         log.info("controller receive a request");
         log.info("Receive a request to get bank name from bank code({})", bankCode);
