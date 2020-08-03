@@ -2,6 +2,7 @@ package com.edda.controller;
 
 import com.edda.proxy.BankProxy;
 import com.edda.service.TestService;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import java.util.Map;
 
 @RestController
 @Slf4j
+@Api(value = "This is a Controller")
 public class Controller {
 
     private TestService testService;
