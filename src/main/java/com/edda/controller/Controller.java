@@ -3,6 +3,7 @@ package com.edda.controller;
 import com.edda.proxy.BankProxy;
 import com.edda.service.TestService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import java.util.Map;
 
 @RestController
 @Slf4j
-@Api(value = "This is a Controller")
+//@Api(tags = "test 用户管理")
 public class Controller {
 
     private TestService testService;
@@ -25,6 +26,7 @@ public class Controller {
         this.bankProxy = bankProxy;
     }
 
+    @ApiOperation("查询用户")
     @GetMapping(path="/test/customers/{customerId}")
     public String getCustomer(@PathVariable String customerId){
         log.info("webhook test 5: get a controller request:{}", customerId);
@@ -32,6 +34,7 @@ public class Controller {
         return "webhook test 6 "+t24CustomerId;
     }
 
+    @ApiOperation("添加用户")
     @PostMapping(path="/test/customers/{customerId}")
     public String createCustomer(@PathVariable String customerId){
         log.info("create a controller request:{}", customerId);
