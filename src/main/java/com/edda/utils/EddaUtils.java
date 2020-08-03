@@ -40,4 +40,15 @@ public class EddaUtils {
         System.out.println(serializationDto.hashCode()+" -> "+serializationDto.toString());
     }
 
+    public static void interviewTest(Byte b){
+        System.out.println("interviewTest " +b);
+        b = b++;
+
+    }
+
+    public static void main(String[] args){
+//        byte b = new byte(10000000);
+        int[] i = {};
+        System.out.println(1<<7);
+    }
 }
