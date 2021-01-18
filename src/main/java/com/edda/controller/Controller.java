@@ -26,7 +26,7 @@ public class Controller {
         this.bankProxy = bankProxy;
     }
 
-    @ApiOperation("查询用户")
+    @ApiOperation("查询用户1")
     @GetMapping(path="/test/customers/{customerId}")
     public String getCustomer(@PathVariable String customerId){
         log.info("webhook test 5: get a controller request:{}", customerId);
